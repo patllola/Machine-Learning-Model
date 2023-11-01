@@ -40,11 +40,12 @@ The goal of this project is to provide machine learning models for crack detecti
 To run the machine learning models, you'll need the following:
 
 - Python 3.10
-- Required Python libraries (specified in requirements.txt)
+- Required Python libraries (specified in requirements.txt), Please run the below command.
+- pip install -r requirements.txt
 
 ### Installation
 
 1. Clone this repository to your local machine:
   https://github.com/patllola/Machine-Learning-Model
-pip install -r requirements.txt
+
 
