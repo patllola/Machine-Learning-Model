@@ -24,13 +24,12 @@ Support Vector Machines (SVM) is a powerful supervised machine learning algorith
     - k-Nearest Neighbors (KNN) is a simple yet effective instance-based machine learning algorithm used for classification tasks. It classifies input images based on the majority class among their k-nearest neighbors in the feature space. KNN does not require explicit model training; instead, it stores the training data and computes predictions at runtime based on the nearest neighbors.
     - [CNN](#cnn)
     - Convolutional Neural Networks (CNNs) are deep learning models designed for image-related tasks. In the context of crack detection, a CNN is used to automatically learn hierarchical features from input images. The network typically consists of convolutional layers, pooling layers, and fully connected layers. It excels at capturing spatial patterns in images.
-4. [Data](#data)
-5. Will provide soon
+4. [Data](#data): Will provide soon
 6. [Results](#results): Will update soon
 7. [Contributing](#contributing)  : Sandeep 
 8. [License](#license)
 
-## Introduction
+## Goal
 
 The goal of this project is to provide machine learning models for crack detection on edge devices. These models can be used to determine whether input images are cracked or not, which can be valuable in various applications, such as structural integrity monitoring.
 
@@ -40,7 +39,7 @@ The goal of this project is to provide machine learning models for crack detecti
 
 To run the machine learning models, you'll need the following:
 
-- Python 3.x
+- Python 3.10
 - Required Python libraries (specified in requirements.txt)
 
 ### Installation
