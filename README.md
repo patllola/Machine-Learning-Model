@@ -46,5 +46,5 @@ To run the machine learning models, you'll need the following:
 
 1. Clone this repository to your local machine:
   https://github.com/patllola/Machine-Learning-Model
-  pip install -r requirements.txt
+pip install -r requirements.txt
 
