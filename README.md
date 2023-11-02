@@ -31,7 +31,7 @@ Support Vector Machines (SVM) is a powerful supervised machine learning algorith
 
 ## Goal
 
-The goal of this project is to provide machine learning models for crack detection on edge devices. These models can be used to determine whether input images are cracked or not, which can be valuable in various applications, such as structural integrity monitoring.
+The goal of this project is to provide machine learning models for crack detection on edge devices. These models can be used to determine whether input images are cracked or not, which can be valuable in various applications, such as structural integrity monitoring, Structural Health Monitoring, Dams, Bridges.
 
 ## Usage
 
