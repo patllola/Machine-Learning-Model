@@ -26,12 +26,12 @@ Support Vector Machines (SVM) is a powerful supervised machine learning algorith
     - Convolutional Neural Networks (CNNs) are deep learning models designed for image-related tasks. In the context of crack detection, a CNN is used to automatically learn hierarchical features from input images. The network typically consists of convolutional layers, pooling layers, and fully connected layers. It excels at capturing spatial patterns in images.
 4. [Data](#data): Will provide soon
 6. [Results](#results): Will update soon
-7. [Contributing](#contributing)  : Sandeep 
+7. [Contributing](#contributing)  : Sandeep, Farjad
 8. [License](#license)
 
 ## Goal
 
-The goal of this project is to provide machine learning models for crack detection on edge devices. These models can be used to determine whether input images are cracked or not, which can be valuable in various applications, such as structural integrity monitoring.
+The goal of this project is to provide machine learning models for crack detection on edge devices. These models can be used to determine whether input images are cracked or not, which can be valuable in various applications, such as structural integrity monitoring, Structural Health Monitoring, Dams, Bridges.
 
 ## Usage
 
