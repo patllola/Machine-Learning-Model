@@ -6,7 +6,7 @@ This repository contains machine learning algorithms for detecting cracked image
 
 ## Table of Contents
 
-1. [Introduction](#introduction): Welcome to the "Machine Learning Algorithms for Crack Detection on Edge Devices" project. In this repository, we present a comprehensive solution for the detection of cracks in images using various machine learning algorithms. Our goal is to enable the deployment of these algorithms on edge devices, making it possible to perform real-time crack detection with minimal computational resources.
+1. [Introduction](#introduction): Welcome to the "Machine Learning Algorithms for Cracked Detection on Edge Devices" project. In this repository, we present a comprehensive solution for the detection of cracks in images using various machine learning algorithms. Our goal is to enable the deployment of these algorithms on edge devices, making it possible to perform real-time crack detection with minimal computational resources.
 
 2. [Usage](#usage)
     - [Requirements](#requirements): Python 3.9 or above, Raspberry Pi
