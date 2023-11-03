@@ -1,4 +1,4 @@
-# Machine Learning Algorithms for Crack Detection on Edge Devices
+# Machine Learning Algorithms for Cracked Detection on Edge Devices
 
 ## Overview
 
