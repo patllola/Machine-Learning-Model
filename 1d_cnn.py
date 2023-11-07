@@ -72,7 +72,6 @@ def main(input_path):
         print("CPU Usage during the program is:", cpu_usage_during_inference,"KB")
         print("Memory Usage during the program is:", memory_usage_during_inference,"KB")
         
-        # Append metrics to lists
 #         timestamps.append(runtime)
         cpu_percentages.append(cpu_usage_during_inference)
         memory_usages.append(memory_usage_during_inference)
@@ -111,7 +110,7 @@ def main(input_path):
 input_path = '/home/scooby/Desktop/Crack Detection/Input_data/Test/'  # Replace with the path to your image or folder
 main(input_path)
 
-# Plot the metrics as graphs
+# Plot the graphs
 plt.figure(figsize=(12, 8))
 plt.subplot(2, 2, 1)
 plt.plot(timestamps, cpu_percentages)
