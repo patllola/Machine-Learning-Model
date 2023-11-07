@@ -6,11 +6,11 @@ import psutil
 import time
 import matplotlib.pyplot as plt
 
-# Load the trained SVM model
+# Loading the trained SVM model
 model_filename = "/home/scooby/Desktop/best_svm_model_split_data.joblib"
 svm_classifier = joblib.load(model_filename)
 
-# Define the path to the folder containing test images
+# Defining the path to the folder containing test images
 test_folder_path = '/home/scooby/Desktop/Crack Detection/Input_data/Test'
 target_size = (64, 64)  # You can adjust the target size to match your preprocessing
 
@@ -29,10 +29,10 @@ def load_and_preprocess_test_images(folder_path, target_size):
     test_images = np.array(test_images)
     return test_images, test_image_names
 
-# Load and preprocess test images
+# Loading and preprocessing test images
 test_images, test_image_names = load_and_preprocess_test_images(test_folder_path, target_size)
 
-# Flatten and normalize test images
+# Flattening and normalize test images
 test_images_flat = test_images.reshape(test_images.shape[0], -1) / 255.0
 
 # Initialize empty lists to store the metrics
@@ -41,7 +41,7 @@ cpu_percentages = []
 memory_usages = []
 runtimes = []
 
-# Run your model within this block
+
 start_time = time.time()
 print("Initial Time: ", start_time)
 initial_cpu_usage_rfc = psutil.cpu_percent()
@@ -49,7 +49,7 @@ print("Initial CPU Usage: ", initial_cpu_usage_rfc)
 initial_memory_usage_rfc = psutil.virtual_memory().used
 print("Initial Memory Usage: ", initial_memory_usage_rfc)
 
-# Perform predictions using the trained SVM model
+# Performing predictions using the trained SVM model
 test_predictions = svm_classifier.predict(test_images_flat)
 
 # Calculate runtime, CPU, and memory usage during inference
@@ -77,7 +77,7 @@ for i in range(duration // interval):
 
     time.sleep(interval)
 
-# Plot the metrics as graphs
+# Plot the graphs
 plt.figure(figsize=(12, 8))
 plt.subplot(2, 2, 1)
 plt.plot(timestamps, cpu_percentages)
@@ -101,11 +101,9 @@ plt.tight_layout()
 # Display the plots
 plt.show()
 
-# Create a dictionary to store the results (image name -> predicted label)
 results = {}
 for image_name, prediction in zip(test_image_names, test_predictions):
     results[image_name] = prediction
 
-# Display the results
 for image_name, prediction in results.items():
     print(f"Image: {image_name}, Predicted Label: {prediction}")
