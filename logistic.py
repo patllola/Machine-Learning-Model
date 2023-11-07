@@ -8,25 +8,22 @@ import time  # Import the time module for timing and sleeping
 import matplotlib.pyplot as plt  # Import matplotlib for plotting
 
 def perform_inference(image_paths, input_images, model):
-    # Initialize an empty dictionary to store the predictions with image paths as keys
     predictions = {}
 
-    # Initialize empty lists to store the metrics
     timestamps = []
     cpu_percentages = []
     memory_usages = []
     runtimes = []
 
-    # Standardize feature scaling (optional but often improves performance)
     scaler = StandardScaler()
     input_images = scaler.fit_transform(input_images)
 
-    # Perform inference on each input image
+    # Performing inference on each input image
     for image_path, image in zip(image_paths, input_images):
         # Reshape the image as needed (e.g., if it's a single feature vector)
         image = image.reshape(1, -1)
 
-        # Measure system utilization before inference
+        # Measureing system utilization before inference
         start_time = time.time()
         initial_cpu_usage = psutil.cpu_percent()
         initial_memory_usage = psutil.virtual_memory().percent
@@ -57,7 +54,7 @@ def perform_inference(image_paths, input_images, model):
         memory_usages.append(memory_usage_during_inference)
         runtimes.append(runtime)
 
-    # Plot the metrics as graphs
+    # Plot the graphs
     plt.figure(figsize=(12, 8))
     plt.subplot(2, 2, 1)
     plt.plot(timestamps, cpu_percentages)
@@ -82,14 +79,14 @@ def perform_inference(image_paths, input_images, model):
     return predictions
 
 if __name__ == "__main__":
-    # Load the trained logistic regression model from the ./Ml_models/ directory
+    # Loading the trained logistic regression model from the ./Ml_models/ directory
     model_filename = "/home/scooby/Desktop/modelfile/logisticregression.pkl"
     loaded_model = joblib.load(model_filename)
 
-    # Define the path to the folder containing test images
+    # Defining the path to the folder containing test images
     test_folder_path = '/home/scooby/Desktop/Crack Detection/Input_data/Test/'
 
-    # Initialize empty lists to store image paths and data
+    # Initializing empty lists to store image paths and data
     image_paths = []
     input_images = []
     for image_file in os.listdir(test_folder_path):
@@ -105,7 +102,7 @@ if __name__ == "__main__":
             image_paths.append(image_path)
             input_images.append(features)
 
-    # Perform inference with the loaded model and collect metrics
+    # Perform inference with the loaded model 
     predictions = perform_inference(image_paths, input_images, loaded_model)
 
     # Print the predictions as a dictionary
