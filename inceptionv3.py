@@ -14,7 +14,7 @@ cpu_percentages = []
 memory_usages = []
 runtimes = []
 
-# Run your model within this block
+
 start_time = time.time()
 print("Initial Time: ", start_time)
 initial_cpu_usage = psutil.cpu_percent()
@@ -22,11 +22,9 @@ print("Initial CPU Usage: ", initial_cpu_usage,"KB")
 initial_memory_usage = psutil.virtual_memory().used
 print("Initial Memory Usage: ", initial_memory_usage/1024,"KB")
 
-# Define a function for making predictions on a single image with HOG feature extraction
 def predict_single_image(image_path, model):
     img = io.imread(image_path)
         
-    # Ensure all pixel values are non-negative (shift to [0, 255] range)
     img = (img - np.min(img)) / (np.max(img) - np.min(img)) * 255
 
     img_gray = color.rgb2gray(img)
@@ -47,7 +45,6 @@ def predict_single_image(image_path, model):
     print("CPU Usage during the program is:", cpu_usage_during_inference,"KB")
     print("Memory Usage during the program is:", memory_usage_during_inference,"KB")
 
-    # Collect system metrics periodically
     duration = 60  # Collect metrics for 60 seconds
     interval = 5   # Collect metrics every 5 seconds
 
@@ -59,7 +56,7 @@ def predict_single_image(image_path, model):
 
         time.sleep(interval)
 
-    # Plot the metrics as graphs
+    # Plot the  graphs
     plt.figure(figsize=(12, 8))
     plt.subplot(2, 2, 1)
     plt.plot(timestamps, cpu_percentages)
@@ -86,7 +83,6 @@ def predict_single_image(image_path, model):
 
 
 
-    # Define a function for making predictions on multiple images in a directory
 def predict_images_in_directory(directory_path, model):
     predictions = {}
     
@@ -101,7 +97,6 @@ def predict_images_in_directory(directory_path, model):
 
 
 
-# You can pass either a single image path or a directory containing images
 input_path = "/home/scooby/Desktop/Crack Detection/Input_data/Test/"
 if os.path.isfile(input_path):
     if input_path.lower().endswith(('.jpg', '.jpeg', '.png', '.bmp')):
