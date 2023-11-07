@@ -12,7 +12,7 @@ battery_percentages = []
 memory_usages = []
 runtimes = []
 
-# Run your model within this block
+
 start_time = time.time()
 print("Initial Time: ", start_time)
 initial_cpu_usage = psutil.cpu_percent()
@@ -22,7 +22,7 @@ print("Initial Memory Usage: ", initial_memory_usage/1024,"KB")
 # Load the saved model
 loaded_model = load_model('/home/scooby/Desktop/modelfile/fine_tuned_model')
 
-# Function to preprocess input image
+# preprocessing input image
 def preprocess_image(image_path, target_size):
     images = []
     image_names = []
@@ -40,12 +40,12 @@ def preprocess_image(image_path, target_size):
 
 target_size = (150, 150)
 
-# Function to perform inference
+# performing inferences
 def perform_inference(image_path, target_size):
-    # Preprocess the input image
+    # Preprocessing the input image
     images, image_names = preprocess_image(image_path, target_size)
     
-    # Perform inference using the loaded model
+    # Performing inference using the loaded model
     predictions = loaded_model.predict(images)
     
     for image_name, prediction in zip(image_names, predictions):
@@ -54,7 +54,7 @@ def perform_inference(image_path, target_size):
         
     return predictions, predicted_label
 
-# Example usage
+
 image_path = '/home/scooby/Desktop/Crack Detection/Input_data/Test'
 predicted_label, predictions = perform_inference(image_path, target_size)
 print("Prediction value:", predictions)
@@ -82,7 +82,7 @@ cpu_percentages.append(cpu_usage_during_inference)
 memory_usages.append(memory_usage_during_inference)
 runtimes.append(runtime)
 
-# # Plot the metrics as graphs
+# # Ploting the graphs
 plt.figure(figsize=(12, 8))
 plt.subplot(2, 2, 1)
 plt.plot(timestamps, cpu_percentages)
