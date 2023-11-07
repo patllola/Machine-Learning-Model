@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 # Load the saved model
 model = tf.keras.models.load_model("/home/scooby/Desktop/modelfile/cnn2D_image_classification_model.h5")
 
-# Initialize lists to store metrics
+# Initializing the mentrices
 timestamps = []
 cpu_percentages = []
 memory_usages = []
@@ -111,7 +111,7 @@ def main(input_path):
 input_path = '/home/scooby/Desktop/Crack Detection/Input_data/Test/'  # Replace with the path to your image or folder
 main(input_path)
 
-# Plot the metrics as graphs
+# Ploting the  graphs
 plt.figure(figsize=(12, 8))
 plt.subplot(2, 2, 1)
 plt.plot(timestamps, cpu_percentages)
