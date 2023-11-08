@@ -4,16 +4,9 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 import psutil
 import time
-import matplotlib.pyplot as plt
 
 # Load the saved model
 model = tf.keras.models.load_model("/home/scooby/Desktop/modelfile/cnn2D_image_classification_model.h5")
-
-# Initialize lists to store metrics
-# timestamps = []
-# cpu_percentages = []
-# memory_usages = []
-# runtimes = []
 
 def preprocess_image(image_path):
     img = image.load_img(image_path, target_size=(150, 150))
@@ -66,28 +59,6 @@ def main(input_path):
 
 input_path = '/home/scooby/Desktop/Crack Detection/Input_data/Test'  # Replace with the path to your image or folder
 main(input_path)
-
-# Plot the metrics as graphs
-# plt.figure(figsize=(12, 8))
-# plt.subplot(2, 2, 1)
-# plt.plot(timestamps, cpu_percentages)
-# plt.scatter(timestamps, cpu_percentages, marker='o', color='r')  # Add markers
-# plt.title('CPU Utilization')
-# plt.xlabel('Time')
-# plt.ylabel('Percentage')
-
-# plt.subplot(2, 2, 2)
-# plt.plot(timestamps, memory_usages)
-# plt.scatter(timestamps, memory_usages, marker='o', color='r')  # Add markers
-# plt.title('Memory Usage')
-# plt.xlabel('Time')
-# plt.ylabel('Percentage')
-
-# plt.subplot(2, 2, 3)
-# plt.plot(timestamps, runtimes)
-# plt.scatter(timestamps, runtimes, marker='o', color='r')  # Add markers
-# plt.title('Runtime')
-# plt.xlabel('Time')
 # plt.ylabel('Seconds')
 
 # plt.tight_layout()
