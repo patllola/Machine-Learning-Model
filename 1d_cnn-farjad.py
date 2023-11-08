@@ -48,18 +48,10 @@ def main(input_path):
     elif os.path.isdir(input_path): # Check if the input is a directory
         folder_predictions = predict_images_in_folder(input_path)
         for filename, predicted_class in folder_predictions.items():
-            # duration = 0
-            # mem_usage = 0
-            # cpu_usage_percent = 0
             print(f"Image {filename}: {predicted_class[0]}\nTime: {predicted_class[1]} seconds\nMemory usage: {predicted_class[2]}\nCPU usage: {predicted_class[3]}%")
             print(f"Image {filename}: {predicted_class}")
-            
     else:
         print("Invalid input path.")
 
 input_path = '/home/scooby/Desktop/Crack Detection/Input_data/Test'  # Replace with the path to your image or folder
 main(input_path)
-# plt.ylabel('Seconds')
-
-# plt.tight_layout()
-# plt.show()
