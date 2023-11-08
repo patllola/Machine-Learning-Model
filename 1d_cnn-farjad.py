@@ -10,10 +10,10 @@ import matplotlib.pyplot as plt
 model = tf.keras.models.load_model("/home/scooby/Desktop/modelfile/cnn2D_image_classification_model.h5")
 
 # Initialize lists to store metrics
-timestamps = []
-cpu_percentages = []
-memory_usages = []
-runtimes = []
+# timestamps = []
+# cpu_percentages = []
+# memory_usages = []
+# runtimes = []
 
 def preprocess_image(image_path):
     img = image.load_img(image_path, target_size=(150, 150))
